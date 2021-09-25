@@ -7,15 +7,15 @@ var serverURL  = "https://api.funtranslations.com/translate/minion.json?text=";
 function errorHandler(error)
 {
     console.log("Some error occured", error);
-    alert("Somehthings wrong with the server !!!");
+    alert("Something is wrong with the server !!!");
 }
 
 function doFetch(){
     const inputText =input.value;
 
-    fetch(serverURL+ inputText ).
+    fetch(serverURL +inputText ).
     then(response=> response.json()).
-    then(json=> out.innerText = json.contents.translated).
+    then(json=> console.log(json.contents.translated) ).
     catch(errorHandler);
 }
 btn.addEventListener("click", doFetch);
