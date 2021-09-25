@@ -15,7 +15,7 @@ function doFetch(){
 
     fetch(serverURL +inputText ).
     then(response=> response.json()).
-    then(json=> console.log(json.contents.translated) ).
+    then(json=> out.value =json.contents.translated ).
     catch(errorHandler);
 }
 btn.addEventListener("click", doFetch);
